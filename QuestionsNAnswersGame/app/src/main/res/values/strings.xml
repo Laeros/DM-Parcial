@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">QuestionsNAnswersGame</string>
+
+    <!-- Textos del fragmento de bienvenida -->
+    <string name="welcome_message">Bienvenido al Quizz!</string>
+    <string name="welcome_description">Prueba tu inteligencia con estas variadas preguntas. Are you ready?</string>
+    <string name="start_button">Comenzar Juego</string>
+
+    <!-- Textos del fragmento de preguntas -->
+    <string name="question_placeholder">Aqui va la pregunta</string>
+    <string name="submit_button">Submit</string>
+    <string name="question_prompt">Elige la opción correcta:</string>
+
+    <!-- Textos del fragmento de respuestas -->
+    <string name="Result">Resultado!</string>
+    <string name="correct_answer">Correcto!</string>
+    <string name="incorrect_answer">Incorrecto!</string>
+    <string name="result_placeholder">Resultado</string>
+    <string name="explanation_placeholder">Aqui va la explicación</string>
+    <string name="next_button">Siguiente</string>
 </resources>
