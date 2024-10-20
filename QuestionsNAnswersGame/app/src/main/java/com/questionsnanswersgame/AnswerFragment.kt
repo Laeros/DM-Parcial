@@ -10,14 +10,25 @@ import androidx.fragment.app.Fragment
 
 class AnswerFragment : Fragment() {
 
-    private var isCorrect: Boolean = false
-    private var explanation: String? = null
+    private lateinit var correctAnswerText: TextView
+    private lateinit var explanationText: TextView
+    private lateinit var funFactText: TextView
+    private lateinit var nextQuestionButton: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            isCorrect = it.getBoolean(ARG_IS_CORRECT)
-            explanation = it.getString(ARG_EXPLANATION)
+    companion object {
+        private const val ARG_IS_CORRECT = "is_correct"
+        private const val ARG_EXPLANATION = "explanation"
+        private const val ARG_FUN_FACT = "fun_fact"
+
+        fun newInstance(isCorrect: Boolean, explanation: String, funFact: String): AnswerFragment {
+            val fragment = AnswerFragment()
+            val args = Bundle().apply {
+                putBoolean(ARG_IS_CORRECT, isCorrect)
+                putString(ARG_EXPLANATION, explanation)
+                putString(ARG_FUN_FACT, funFact)
+            }
+            fragment.arguments = args
+            return fragment
         }
     }
 
@@ -31,32 +42,28 @@ class AnswerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Mostrar si la respuesta fue correcta o incorrecta
-        val resultTextView: TextView = view.findViewById(R.id.result_text_view)
-        resultTextView.text = if (isCorrect) getString(R.string.correct_answer) else getString(R.string.incorrect_answer)
+        // Referencias a los elementos del layout
+        correctAnswerText = view.findViewById(R.id.correct_answer_text)
+        explanationText = view.findViewById(R.id.explanation_text)
+        funFactText = view.findViewById(R.id.fun_fact_text)
+        nextQuestionButton = view.findViewById(R.id.next_question_button) // Referencia al botón
 
-        // Mostrar la explicación de la respuesta correcta
-        val explanationTextView: TextView = view.findViewById(R.id.explanation_text_view)
-        explanationTextView.text = explanation
+        // Obtener argumentos del fragmento
+        arguments?.let {
+            val isCorrect = it.getBoolean(ARG_IS_CORRECT)
+            val explanation = it.getString(ARG_EXPLANATION)
+            val funFact = it.getString(ARG_FUN_FACT)
 
-        // Botón para pasar a la siguiente pregunta
-        val nextButton: Button = view.findViewById(R.id.next_button)
-        nextButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            // Mostrar el resultado
+            correctAnswerText.text = if (isCorrect) "¡Correcto!" else "Incorrecto"
+            explanationText.text = explanation
+            funFactText.text = funFact
         }
-    }
 
-    companion object {
-        private const val ARG_IS_CORRECT = "is_correct"
-        private const val ARG_EXPLANATION = "explanation"
-
-        @JvmStatic
-        fun newInstance(isCorrect: Boolean, explanation: String) =
-            AnswerFragment().apply {
-                arguments = Bundle().apply {
-                    putBoolean(ARG_IS_CORRECT, isCorrect)
-                    putString(ARG_EXPLANATION, explanation)
-                }
-            }
+        // Configurar el botón para continuar a la siguiente pregunta
+        nextQuestionButton.setOnClickListener {
+            // Volver al QuestionFragment o cargar la siguiente pregunta
+            parentFragmentManager.popBackStack() // Regresar a la pregunta
+        }
     }
 }
