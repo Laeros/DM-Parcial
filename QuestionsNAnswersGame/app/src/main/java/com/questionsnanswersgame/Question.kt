@@ -1,11 +1,9 @@
 package com.questionsnanswersgame
 
 data class Question(
-    val text: String,
+    val question: String,
     val options: List<String>,
-    val correctAnswerIndex: Int
-) {
-    fun explanation(): String {
-        return "La respuesta correcta es: ${options[correctAnswerIndex]}"
-    }
-}
+    val correctAnswerIndex: Int,
+    val explanation: String,
+    val funFact: String
+)
