@@ -15,22 +15,55 @@
         android:textStyle="bold"
         android:layout_marginBottom="16dp" />
 
-    <!-- Grupo de RadioButtons para las opciones -->
+    <!-- Temporizador -->
+    <TextView
+        android:id="@+id/timer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer_placeholder"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Opciones de respuesta -->
     <RadioGroup
         android:id="@+id/options_radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <!-- Las opciones se cargarán dinámicamente desde el código en QuestionFragment -->
+
+        <RadioButton
+            android:id="@+id/option_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_one_text" />
+
+        <RadioButton
+            android:id="@+id/option_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_two_text" />
+
+        <RadioButton
+            android:id="@+id/option_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_three_text" />
+
+        <RadioButton
+            android:id="@+id/option_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_four_text" />
     </RadioGroup>
 
-    <!-- Botón para enviar la respuesta -->
+    <!-- Botón de envío -->
     <Button
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/submit_button"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp" />
-
+        android:layout_marginTop="24dp"
+        android:enabled="false" />
 </LinearLayout>
