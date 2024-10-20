@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Resultado (Correcto o Incorrecto) -->
     <TextView
-        android:id="@+id/result_text_view"
+        android:id="@+id/correct_answer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result_placeholder"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_gravity="center"
         android:layout_marginBottom="16dp" />
 
-    <!-- Explicación de la respuesta correcta -->
     <TextView
-        android:id="@+id/explanation_text_view"
+        android:id="@+id/explanation_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explanation_placeholder"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:layout_below="@id/correct_answer_text"
         android:layout_marginBottom="16dp" />
 
-    <!-- Botón para pasar a la siguiente pregunta -->
+    <TextView
+        android:id="@+id/fun_fact_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_below="@id/explanation_text"
+        android:layout_marginBottom="16dp" />
+
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/next_question_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next_button"
-        android:layout_gravity="center" />
-</LinearLayout>
+        android:layout_below="@id/fun_fact_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
