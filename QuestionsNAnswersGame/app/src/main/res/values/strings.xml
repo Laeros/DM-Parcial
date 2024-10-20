@@ -1,21 +1,30 @@
 <resources>
     <string name="app_name">QuestionsNAnswersGame</string>
-
     <!-- Textos del fragmento de bienvenida -->
     <string name="welcome_message">Bienvenido al Quizz!</string>
     <string name="welcome_description">Prueba tu inteligencia con estas variadas preguntas. Are you ready?</string>
     <string name="start_button">Comenzar Juego</string>
 
     <!-- Textos del fragmento de preguntas -->
-    <string name="question_placeholder">Aqui va la pregunta</string>
-    <string name="submit_button">Submit</string>
+    <string name="question_placeholder">¿Aquí va la pregunta?</string>
+    <string name="option_one_text">Opción 1</string>
+    <string name="option_two_text">Opción 2</string>
+    <string name="option_three_text">Opción 3</string>
+    <string name="option_four_text">Opción 4</string>
+    <string name="submit_button">Enviar</string>
     <string name="question_prompt">Elige la opción correcta:</string>
+    <string name="time_remaining">Tiempo restante: %1$d segundos</string>
+    <string name="timer_placeholder">30 segundos restantes</string>
 
     <!-- Textos del fragmento de respuestas -->
-    <string name="Result">Resultado!</string>
-    <string name="correct_answer">Correcto!</string>
+    <string name="result_text">¡Resultado!</string>
+    <string name="next_button">Continuar</string>
+    <string name="correct_answer">¡Correcto!</string>
     <string name="incorrect_answer">Incorrecto!</string>
-    <string name="result_placeholder">Resultado</string>
-    <string name="explanation_placeholder">Aqui va la explicación</string>
-    <string name="next_button">Siguiente</string>
+    <string name="explanation_text">Aquí va la explicación de la respuesta correcta.</string>
+    <string name="fun_fact_text">Dato curioso: Aqui va un dato curioso.</string>
+
+    <!-- Textos del fragmento de puntuación -->
+    <string name="score_message">Obtuviste %1$d de %2$d puntos</string>
+    <string name="restart_button">Reiniciar Juego</string>
 </resources>
